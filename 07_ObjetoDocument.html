@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function CambiarTitleDocumentoHTML()
+        {
+            document.title="title del archivo html cambiado desde js";
+        }        
+
+        function ObtenerElementoPorID()
+        {
+            var elementos= document.getElementsByTagName("p");
+            var cadena="";
+            for(i=0;i<elementos.length;i++)
+            {
+                cadena+=elementos[i].innerHTML+","
+            }
+ 
+            //mostramos el contenido html de los parrafos
+            alert(cadena);
+        }
+    </script>
+
+    <!-- Obtener los elementos con TagName especifico -->
+    <p>Parrafo 1</p>
+    <p>Parrafo 2</p>
+    <p>Parrafo 3</p>
+
+    <input type="button" onclick="CambiarTitleDocumentoHTML();" value="Cambiar title">
+    <input type="button" onclick="ObtenerElementoPorID();" value="Mostrar elementos con id p">
+
+    
+</body>
+</html>

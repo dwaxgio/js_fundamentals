@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Definiciones de arreglos
+        // Arreglo: Colección de elementos
+
+        // Clasica - poco recomendada
+        var arregloClasico = new Array();
+        arregloClasico[0] = "Pacman";
+        arregloClasico[1] = "Bomberman";
+        arregloClasico[4] = "ExiteBike"; // Notar que si hago un conteo de este arreglo, como defini un indice 4, me va a decir que tengo 5 elementos, lo que es erroneo
+
+        // Moderna
+        var arregloModerno = ["Halo", "NFS", "AC"]
+        
+        // OO
+        var arregloOO = new Array();
+        arregloOO.push("FIFA"); // Notar el uso de la función push para insertar elemento al arreglo
+        arregloOO.push("AOE");
+        arregloOO.push("DMC");
+
+        // Recorrido de arreglo
+        // Mediante for
+        for(i = 0; i < arregloModerno.length; i++)
+        {
+            document.writeln(arregloModerno[i] + "<br>");
+        }
+
+        document.writeln("<br>");
+        document.writeln("<br>");
+
+        // Similar a foreach
+        for(var o in arregloOO)
+        {
+            document.writeln(arregloOO[o] + "<br>");
+        }
+
+        document.writeln("<br>");
+        document.writeln("<br>");
+
+        // Manera optimizada con foreach
+        var arregloOO2 = new Array();
+        arregloOO2.push("Matrix");
+        arregloOO2.push("Brave Heart");
+        arregloOO2.push("Pulp Fiction");
+
+        arregloOO2.forEach(function(o)
+        {
+            document.writeln(o + "<br>");
+        });
+    </script>
+</body>
+</html>

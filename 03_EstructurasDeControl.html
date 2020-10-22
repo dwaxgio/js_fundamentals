@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    
+</head>
+<body>
+    <script>
+        // Estructuras de control de selección
+        
+        var n = 2;
+
+        // if else
+        if(n == 1)
+        {
+            document.writeln("El número es 1");
+        } else if (n == 2)
+        {
+            document.writeln("El número es 2");
+        }
+        else
+        {
+            document.writeln("El número es diferente a 1 y a 2");
+        }
+
+        document.write("<br>");
+        document.write("<br>");
+
+        //switch
+        switch(n)
+        {
+            case 1: document.writeln("n es 1");
+            break;
+
+            case 2: document.writeln("n es 2");
+            break;
+
+            default: document.writeln("n no es 1 ni 2");
+        }
+
+        document.write("<br>");
+        document.write("<br>");
+
+        // Estructura iterativas
+        // while
+        while(n < 10)
+        {
+            document.writeln("<br>El número va en: " + n);
+            n++;
+        }
+
+        document.write("<br>");
+        document.write("<br>");
+
+        // for
+        for(m = 0; m<=10; m++)
+        {
+            document.writeln("<br>El número va en:" + m);
+        }
+
+    </script>
+</body>
+</html>

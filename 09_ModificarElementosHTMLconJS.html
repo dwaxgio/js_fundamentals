@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        function CambiaComponente()
+        {
+            // se optiene nodo con GetElementByID del combobox
+            // con value se optiene la opcion seleccionada
+            var opcion=document.getElementById("comboMagico").value;
+
+            // Se hace switch case, dependiendo de opcion seleccionada
+            switch(opcion)
+            {
+                case "TextBox":
+                document.getElementById("inputMagico").type="text"
+                break;
+ 
+                case "Button":
+                document.getElementById("inputMagico").type="button"
+                break;
+ 
+                case "CheckBox":
+                document.getElementById("inputMagico").type="checkbox"
+                break;
+            }
+        }
+    </script>
+</head>
+<body>
+    <div>
+        <select id="comboMagico" onchange="CambiaComponente();">
+            <option selected="selected" value="TextBox">TextBox</option>
+            <option value="Button">Button</option>
+            <option value="CheckBox">CheckBox</option>
+        </select>
+    </div>
+
+    <div>
+        <input id="inputMagico" type="text" value="Input Mágio">
+    </div>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Clase libro
+        function Libro(Nombre, Autor)
+        {
+            this.Nombre = Nombre;
+            this.Autor = Nombre;
+        }
+
+        // Clase biblioteca
+        function Biblioteca(Nombre)
+        {
+            this.Nombre = Nombre; // Guarda nombre de biblioteca
+            this.Libros = new Array(); // Atributo para guardar biblioteca de libros
+
+            // Método para guardar libros
+            this.addLibro = function addLibro(Libro)
+            {
+                this.Libros.push(Libro);
+            }
+
+            // Método para mostrar libros utilizando foreach al array Libros de esta clase
+            this.muestraTodosLosLibros = function muestraTodosLosLibros()
+            {
+                var cadenaLibros = "";
+                this.Libros.forEach(function(Libro)
+                {
+                    //document.writeln(oLibro + "<br>");
+                    cadenaLibros += Libro.Nombre+"n";
+                })
+                return cadenaLibros;
+            }
+        }
+
+        // Se crean libros para biblioteca
+        var Libro1 = new Libro("Sherlok Holmes", "Artur Conan Doyle");
+        var Libro2 = new Libro("Dialogos de Platón", "Platón");
+
+        // Se crea / instancia un objeto de tipo biblioteca
+        var BibliotecaPublica = new Biblioteca("Biblioteca Pública 1");
+
+        // Se agregan libros a la biblioteca pública
+        BibliotecaPublica.addLibro(Libro1);
+        BibliotecaPublica.addLibro(Libro2);
+
+        // Se muestran libros
+        document.writeln(BibliotecaPublica.muestraTodosLosLibros());
+    </script>
+</body>
+</html>

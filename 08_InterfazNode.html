@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        function CambiarTamano()
+        {
+            nodo = document.getElementById("imagen");
+
+            // Se utiliza el atributo style, que a su vez tiene los atributos CSS y se asigna nuevo ancho
+            nodo.style.width="300px";
+        }
+    </script>
+</head>
+<body>
+    <img id="imagen" src="https://avatars0.githubusercontent.com/u/31946346?s=460&u=b9e6071d9a16ba4a829e7bcb7c80c5acedcc54a6&v=4">
+    <input type="button" onclick="CambiarTamano();" value="Cambiar Tamaño">
+</body>
+</html>

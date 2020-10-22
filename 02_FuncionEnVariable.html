@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        // Función que muestra un mensaje
+        function muestraMensaje(funcion)
+        {
+            alert(funcion());
+        }
+
+        // Se guarda funcion en una variable
+        var variableFuncion = function(){return "Hola Mundo!";}; // Variable de función anónima
+        
+        // Se implementa función, enviando la variable como parametro
+        muestraMensaje(variableFuncion)
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

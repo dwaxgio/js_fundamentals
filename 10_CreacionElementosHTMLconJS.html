@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        function Agregar()
+        {
+            // Optener valores de caja de texto
+            var codigo=document.getElementById("txtCodigo").value;
+var nombre=document.getElementById("txtNombre").value;
+var precio=document.getElementById("txtPrecio").value;
+
+            // Se crea objeto tr que se anexa a tabla tablaProductos
+            var TR= document.createElement("tr");
+
+            // Se crean 4 elementos td donde van los datos, y uno adicional para el boton de eliminar
+            var TD1=document.createElement("td")
+var TD2=document.createElement("td")
+var TD3=document.createElement("td");
+var TD4= document.createElement("td")
+
+            // Se asignan valores a td por medio del atributo innerHTML, el cual tiene contenido HTML de un nodo
+            TD1.innerHTML=codigo;
+TD2.innerHTML=nombre;
+TD3.innerHTML=precio;
+
+            // Se asigna contenido HTML al cuarto td
+            D4.innerHTML="&lt;input type='button' value='Eliminar' onclick='Elimina(this)'&gt;"
+
+            // Se agregan los hijos TD al padre tr
+            TR.appendChild(TD1);
+TR.appendChild(TD2);
+TR.appendChild(TD3);
+TR.appendChild(TD4);
+
+            // sE ASIGNA TR a la tabla con id tablaProductos
+            document.getElementById("tablaProductos").appendChild(TR)
+
+            // Se limpia inputs para agregar datos, se pune nuevamente foco en imput de codigo
+            document.getElementById("txtCodigo").value=""
+document.getElementById("txtNombre").value="";
+document.getElementById("txtPrecio").value="";
+document.getElementById("txtCodigo").focus();
+        }
+
+        function Elimina(NodoBoton)
+        {
+            // Se recibe botón como parametro, se optiene tr que lo contiene
+            // Dado que boton es hijo de un td, y td del tr, se debe invocar dos veces parentNode
+            // Lo anterior, para optener el TR
+            var TR= NodoBoton.parentNode.parentNode;
+
+            // Ya se tiene el padre, para eliminar junto a hijos
+            document.getElementById("tablaProductos").removeChild(TR);
+        }
+    </script>
+</head>
+<body>
+    <!-- Formulario detalle - se agregan elementos-->
+    <div id="tutorial">
+        <div >
+        <div class="bloque">
+        <label>Código</label>
+        <input type="text" id="txtCodigo" value="" />
+        </div>
+        <div class="bloque">
+        <label>Nombre</label>
+        <input type="text" id="txtNombre" value="" />
+        </div>
+        <div class="bloque">
+        <label>Precio</label>
+        <input type="text" id="txtPrecio" value="" />
+        </div>
+        <div class="bloque">
+        <input value="Agregar" type="button" onclick="Agrega()" />
+        </div>
+        <div style="clear:both"></div>
+        </div>
+         
+        <div>
+        <table style="width:400px;" id="tablaProductos">
+        <tr>
+        <th>Código</th>
+        <th>Nombre</th>
+        <th>Precio</th>
+        <th>X</th>
+        </tr>
+        </table>
+        </div>
+        </div>
+
+</body>
+</html>
