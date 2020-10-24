@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // la promesa, se puede implementar cuando se esta a la espera de la ejecución de una tarea, y se adelanta mientras tanto otra
+        // ej. en procesos asincronos
+        //var resultado = 1;
+        const miPromesa = new Promise((resolve, reject) => {
+            console.log("Está haciendo algo mal");
+            /*//throw new Error("ups");
+            if(resultado == 1)
+            {
+                resolve("se hizo");
+            }
+            else
+            {
+                reject("Upss, algo falló!");
+            }*/
+            setTimeout(function () {
+                resolve(miPromesa2());
+            }, 2000)
+        });
+
+        const miPromesa2 = () => // funcion anonima que devuelve promesa
+        {
+            return new Promise((resolve, reject) => {
+                console.log("Se está haciendo algo más");
+                setTimeout(function () {
+                    resolve("se ha terminado");
+                }, 2000)
+            })
+        }
+
+        miPromesa.then(resultado => {
+            //console.log(resultado);
+            return resultado;
+        }).then(mensaje =>
+        {
+            console.log(mensaje);
+        }).catch(message => {
+            console.error(message);
+        })
+         // Si no se cumple promesa, se ejecuta lo siguiente
+    </script>
+</body>
+
+</html>
